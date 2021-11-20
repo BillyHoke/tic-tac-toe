@@ -8,14 +8,16 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 </style>
 </head>
 <body>
     <header>
         <h1>Tic-Tac-Toe</h1>
-        <input type="button" value="Restart" class ="restart-button">
+        <div id="winner"></div>
     </header>
-    <div class id="container">
+    <!-- <div class id="container"> -->
     <div class="boxes">
             <div id="b1"></div>
             <div id="b2"></div>
@@ -29,9 +31,9 @@
             </div>
         </div>
     </div>
-    <div id="game-updates">
-        Ready...? Click a box to start playing!
-    </div>
+    <footer>
+        <input type="button" value="Restart" class="restart-button" onclick="restart()">
+    </footer>
 </body>
 <script src="main.js"></script>
 </html>

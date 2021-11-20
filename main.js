@@ -1,7 +1,8 @@
 const boxElement = document.querySelector('.boxes');
 let gameUpdate = document.querySelector('#game-updates');
-let xPlayer = 'x';
-let oPlayer = 'o';
+let winner = document.querySelector('#winner');
+let xPlayer = 'X';
+let oPlayer = 'O';
 let currentPlayer = xPlayer;
 let winStatus = [];
 
@@ -13,6 +14,7 @@ boxElement.addEventListener('click', function (event) {
         winStatus[id] = currentPlayer;
         console.log(event.target);
         event.target.classList.toggle('inUse');
+        console.log(winStatus);
         checkWin();
         switchPlayer();
     } else {
@@ -20,16 +22,16 @@ boxElement.addEventListener('click', function (event) {
     }
 });
 
+// switch player. If the current player is 'x', change it to 'o'.
 function switchPlayer() {
     if (currentPlayer == xPlayer) {
-        gameUpdate.innerText = `Player two's turn...`;
         currentPlayer = oPlayer;
     } else {
         currentPlayer = xPlayer;
-        gameUpdate.innerText = `Player one's turn...`;
     }
 }
 
+// check if the user has the cells needed to win. How can I make this smaller?
 function checkWin() {
     if (
         winStatus.b1 == currentPlayer &&
@@ -37,6 +39,7 @@ function checkWin() {
         winStatus.b3 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
 
     if (
@@ -45,6 +48,7 @@ function checkWin() {
         winStatus.b6 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
 
     if (
@@ -53,6 +57,7 @@ function checkWin() {
         winStatus.b9 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
     if (
         winStatus.b1 == currentPlayer &&
@@ -60,6 +65,7 @@ function checkWin() {
         winStatus.b7 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
     if (
         winStatus.b2 == currentPlayer &&
@@ -67,6 +73,7 @@ function checkWin() {
         winStatus.b8 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
     if (
         winStatus.b3 == currentPlayer &&
@@ -74,6 +81,7 @@ function checkWin() {
         winStatus.b9 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
     if (
         winStatus.b1 == currentPlayer &&
@@ -81,6 +89,7 @@ function checkWin() {
         winStatus.b9 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
     if (
         winStatus.b3 == currentPlayer &&
@@ -88,5 +97,16 @@ function checkWin() {
         winStatus.b7 == currentPlayer
     ) {
         console.log(`${currentPlayer} wins`);
+        winner.innerText = `Player ${currentPlayer} wins!`;
     }
+
+    // check if winStatus[] length is at maximum amount of possible cells played. If so, nobody wins.
+    if (winStatus.length >= 9) {
+        winner.innerText = `It's a draw!`;
+    }
+}
+
+//reload the window on button press
+function restart() {
+    window.location.reload();
 }
