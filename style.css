@@ -1,4 +1,136 @@
-h1 {
-    color: red;
+:root {
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #374785;
+}
+.boxes {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-areas:
+        '1 2 3'
+        '4 5 6'
+        '7 8 9';
+    justify-content: center;
+    font-size: 72px;
+}
+
+header {
+    font-size: 22px;
+    color: #f8e981;
     text-align: center;
+    padding-bottom: 50px;
+}
+
+.restart-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow,
+        filter;
+    transition-duration: 0.3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 13px 14px 18px;
+    color: #f8e981;
+    box-shadow: inset 0 0 0 2px #f8e981;
+    background-color: transparent;
+    height: 42px;
+}
+
+.restart-button:hover {
+    color: #fff;
+    background-color: #616467;
+}
+
+#b1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #f8e981;
+    color: #f8e981;
+}
+
+#b9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8e981;
+}
+
+#game-updates {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #f76c6c;
 }
