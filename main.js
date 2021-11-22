@@ -1,24 +1,23 @@
 const boxElement = document.querySelector('.boxes');
-let gameUpdate = document.querySelector('#game-updates');
-let winner = document.querySelector('#winner');
-let xPlayer = 'X';
-let oPlayer = 'O';
+let player1Name = localStorage.getItem('p1');
+let player2Name = localStorage.getItem('p2');
+let xPlayer = 'x';
+let oPlayer = 'o';
 let currentPlayer = xPlayer;
 let winStatus = [];
+//adding audio
 
 boxElement.addEventListener('click', function (event) {
     if (event.target.classList != 'inUse') {
         let id = event.target.id;
-        event.target.innerText = currentPlayer;
+        event.target.innerHTML = currentPlayer;
         winStatus.push(id);
         winStatus[id] = currentPlayer;
-        console.log(event.target);
         event.target.classList.toggle('inUse');
-        console.log(winStatus);
         checkWin();
         switchPlayer();
     } else {
-        alert(`Someone has already chosen that box! Try again...`);
+        alert(`Spot already taken! You'll have to choose another square!`);
     }
 });
 
@@ -38,8 +37,7 @@ function checkWin() {
         winStatus.b2 == currentPlayer &&
         winStatus.b3 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
 
     if (
@@ -47,8 +45,7 @@ function checkWin() {
         winStatus.b5 == currentPlayer &&
         winStatus.b6 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
 
     if (
@@ -56,53 +53,81 @@ function checkWin() {
         winStatus.b8 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
     if (
         winStatus.b1 == currentPlayer &&
         winStatus.b4 == currentPlayer &&
         winStatus.b7 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
     if (
         winStatus.b2 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b8 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
     if (
         winStatus.b3 == currentPlayer &&
         winStatus.b6 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
     if (
         winStatus.b1 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
     if (
         winStatus.b3 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b7 == currentPlayer
     ) {
-        console.log(`${currentPlayer} wins`);
-        winner.innerText = `Player ${currentPlayer} wins!`;
+        displayWinner();
     }
 
     // check if winStatus[] length is at maximum amount of possible cells played. If so, nobody wins.
-    if (winStatus.length >= 9) {
-        winner.innerText = `It's a draw!`;
+    if (winStatus.length == 9) {
+        displayDraw();
+    }
+}
+
+function displayWinner() {
+    let winnerText = document.createElement('p');
+    winner.classList.add('winner-text');
+    if (currentPlayer == xPlayer) {
+        winnerText.innerHTML = `${player1Name} wins!`;
+        winner.append(winnerText);
+    } else if (currentPlayer == oPlayer) {
+        winnerText.innerText = `${player2Name} wins!`;
+        winner.append(winnerText);
+    }
+    boxElement.style.pointerEvents = 'none';
+}
+
+function displayDraw() {
+    let winnerText = document.createElement('p');
+    winner.classList.add('winner-text');
+    winnerText.innerText = `It's a draw! Fancy a rematch?`;
+    winner.append(winnerText);
+    boxElement.style.pointerEvents = 'none';
+}
+
+function setName() {
+    player1Name = document.querySelector('.player-1-name').value;
+    player2Name = document.querySelector('.player-2-name').value;
+    localStorage.setItem('p1', document.querySelector('.player-1-name').value);
+    localStorage.setItem('p2', document.querySelector('.player-2-name').value);
+    if (player1Name == '' || player2Name == '') {
+        alert('Type your name to continue!');
+    } else {
+        let playButton = document.querySelector('.play-button');
+        playButton.style.visibility = 'visible';
     }
 }
 
