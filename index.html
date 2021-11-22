@@ -10,32 +10,33 @@
    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+   .container {
+       display: flex;
+       flex-direction: column;
+       max-width: 35%;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+   }
+
 </style>
-<audio src="/audio/red-light.mp3" class="red-audio"></audio>
-<audio src="/audio/green-light.m4a" class="green-audio"></audio>
 </head>
 <body>
     <header>
         <h1>Tic-Tac-Toe</h1>
         <div id="winner"></div>
     </header>
-    <!-- <div class id="container"> -->
-    <div class="boxes">
-            <div id="b1"></div>
-            <div id="b2"></div>
-            <div id="b3"></div>
-            <div id="b4"></div>
-            <div id="b5"></div>
-            <div id="b6"></div>
-            <div id="b7"></div>
-            <div id="b8"></div>
-            <div id="b9"></div>
-            </div>
-        </div>
+
+    <div class="container">
+        <input type="text" id="input-field" class="player-1-name" placeholder="Type your name here...">
+        <input type="text" id="input-field" class="player-2-name" placeholder="Type your name here...">
+        <input type="button" value="Submit" class="submit-button" onclick="setName()">
     </div>
-    <footer>
-        <input type="button" value="Restart" class="restart-button" onclick="restart()">
+
+    <footer>   
+        <input type="button" value="Play!" class="play-button" onclick="location.href='game.html';">
     </footer>
 </body>
-<script src="main.js"></script>
+<script src="/main.js"></script>
 </html>
