@@ -5,7 +5,6 @@ let xPlayer = 'x';
 let oPlayer = 'o';
 let currentPlayer = xPlayer;
 let winStatus = [];
-//adding audio
 
 boxElement.addEventListener('click', function (event) {
     if (event.target.classList != 'inUse') {
