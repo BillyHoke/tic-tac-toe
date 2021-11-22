@@ -62,7 +62,6 @@ header {
     border-right: 2px solid #f8e981;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b2 {
@@ -72,7 +71,6 @@ header {
     border-right: 2px solid #f8e981;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b3 {
@@ -81,7 +79,6 @@ header {
     align-items: center;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b4 {
@@ -91,7 +88,6 @@ header {
     border-right: 2px solid #f8e981;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b5 {
@@ -101,7 +97,6 @@ header {
     border-right: 2px solid #f8e981;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b6 {
@@ -110,7 +105,6 @@ header {
     align-items: center;
     border-bottom: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b7 {
@@ -119,7 +113,6 @@ header {
     align-items: center;
     border-right: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b8 {
@@ -128,7 +121,6 @@ header {
     align-items: center;
     border-right: 2px solid #f8e981;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
 #b9 {
@@ -136,19 +128,91 @@ header {
     justify-content: center;
     align-items: center;
     color: #f8e981;
-    font-family: 'Permanent Marker', cursive;
 }
 
-#winner {
+.winner-text {
     text-align: center;
-    font-size: 1.5em;
-    color: #f76c6c;
+    font-size: 2em;
+    color: #b9b9b9;
     text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}
+
+p {
+    margin: 0;
 }
 
 footer {
     text-align: center;
     padding-top: 50px;
+}
+
+.submit-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow,
+        filter;
+    transition-duration: 0.3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 13px 14px 18px;
+    color: #f8e981;
+    box-shadow: inset 0 0 0 2px #f8e981;
+    background-color: transparent;
+    height: 42px;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    color: #fff;
+    background-color: #616467;
+}
+
+.play-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow,
+        filter;
+    transition-duration: 0.3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 13px 14px 18px;
+    color: #a3f881;
+    box-shadow: inset 0 0 0 2px #a3f881;
+    background-color: transparent;
+    height: 42px;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.play-button:hover {
+    color: #fff;
+    background-color: #678f7c;
+}
+
+#input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* git fix */
