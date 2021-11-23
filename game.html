@@ -7,17 +7,17 @@
     <title>Tic-Tac-Toe</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
-   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@700&display=swap');
    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 </style>
-<audio src="/audio/red-light.mp3" class="red-audio"></audio>
-<audio src="/audio/green-light.m4a" class="green-audio"></audio>
 </head>
 <body>
     <header>
-        <h1>Tic-Tac-Toe</h1>
-        <div id="winner"></div>
+        <img class="game-logo2" src="/images/logo.png">
+        <img class="game-logo" src="/images/logo.png">
+        <img class="game-logo2" src="/images/logo.png">
+        <!-- <h1>Tic-Tac-Toe</h1> -->
     </header>
     <!-- <div class id="container"> -->
     <div class="boxes">
@@ -34,7 +34,8 @@
         </div>
     </div>
     <footer>
-        <input type="button" value="Restart" class="restart-button" onclick="restart()">
+        <div id="winner"></div>
+        <h2 class="play-button" onclick="restart()">PLAY AGAIN!</h2>
     </footer>
 </body>
 <script src="main.js"></script>

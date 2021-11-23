@@ -1,14 +1,15 @@
 :root {
     font-family: 'Permanent Marker', cursive;
+    cursor: crosshair;
 }
 
 body {
-    background-color: #374785;
+    background-color: #000000;
 }
 .boxes {
     display: grid;
-    grid-template-columns: 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 120px 120px 120px;
     grid-template-areas:
         '1 2 3'
         '4 5 6'
@@ -23,36 +24,23 @@ header {
     font-size: 22px;
     color: #f8e981;
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
-.restart-button {
-    display: inline-block;
-    outline: none;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 500px;
-    transition-property: background-color, border-color, color, box-shadow,
-        filter;
-    transition-duration: 0.3s;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    min-width: 160px;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 13px 14px 18px;
-    color: #f8e981;
-    box-shadow: inset 0 0 0 2px #f8e981;
-    background-color: transparent;
-    height: 42px;
+.play-button {
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+    color: #f44786;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-top: 10px;
+    visibility: hidden;
 }
 
-.restart-button:hover {
-    color: #fff;
-    background-color: #616467;
+.play-button:hover {
+    color: #249f9c;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
 }
 
 #b1 {
@@ -145,7 +133,7 @@ p {
 
 footer {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .submit-button {
@@ -169,42 +157,12 @@ footer {
     box-shadow: inset 0 0 0 2px #f8e981;
     background-color: transparent;
     height: 42px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .submit-button:hover {
     color: #fff;
     background-color: #616467;
-}
-
-.play-button {
-    display: inline-block;
-    outline: none;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 500px;
-    transition-property: background-color, border-color, color, box-shadow,
-        filter;
-    transition-duration: 0.3s;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    min-width: 160px;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 13px 14px 18px;
-    color: #a3f881;
-    box-shadow: inset 0 0 0 2px #a3f881;
-    background-color: transparent;
-    height: 42px;
-    margin-top: 10px;
-    visibility: hidden;
-}
-
-.play-button:hover {
-    color: #fff;
-    background-color: #678f7c;
 }
 
 #input-field {
@@ -213,6 +171,36 @@ footer {
     margin: 5px;
     border-radius: 10px;
     box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: #f8e981;
+    font-size: 1.5em;
+    margin: 5px;
+    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.game-logo {
+    display: inline;
+    width: 240px;
+    position: relative;
+    height: auto;
+    margin-left: -90px;
+    margin-right: -90px;
+    margin-bottom: -40px;
+    z-index: 1;
+}
+
+.game-logo2 {
+    display: inline;
+    position: relative;
+    width: 180px;
+    height: auto;
+    margin-bottom: 1px;
+}
+
+span {
+    color: red;
 }
 
 /* git fix */
