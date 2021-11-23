@@ -7,9 +7,15 @@
     <title>Tic-Tac-Toe</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
-   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@700&display=swap');
+    
+    body {
+        background-color: #000000;
+        cursor: crosshair;
+        font-family: 'M PLUS Code Latin', sans-serif;
+    }
 
    .container {
        display: flex;
@@ -20,23 +26,76 @@
        margin: 0 auto;
    }
 
+    .logo {
+    width: 400px;
+    height: auto;
+    margin-top: 10px;
+    }
+
+    .title {
+    animation: fadeIN 12s;
+    -webkit-animation: fadeIn 12s;
+    color: #f8e981;
+    font-size: 22px;
+
+    }
+
+     @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    h2 {
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .6);
+    color:#f44786 ;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 0%;
+    }
+
+    h2:hover {
+    color: antiquewhite;
+    text-shadow: 2px 2px 0px #f44786;
+    }
+
+    .play-button {
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .6);
+    color:#f44786 ;
+    font-size: 38px;
+    margin-top: 0px;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.play-button:hover {
+    color: #249f9c;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+}
+
 </style>
 </head>
 <body>
+    <audio src="audio/menu-music.mp3" class="menu-music"></audio>
     <header>
-        <h1>Tic-Tac-Toe</h1>
-        <div id="winner"></div>
+        <!-- <h1>Tic-Tac-Toe</h1> -->
+        <img src="/images/logo.png" class="logo">
+        <p>For your next game you'll be playing...</p>
+        <p class="title">TIC TAC TOE.</p>
     </header>
 
     <div class="container">
-        <input type="text" id="input-field" class="player-1-name" placeholder="Player 1 - type your name here...">
-        <input type="text" id="input-field" class="player-2-name" placeholder="Player 2 - type your name here...">
-        <input type="button" value="Submit" class="submit-button" onclick="setName()">
+        <input type="text" id="input-field" class="player-1-name" placeholder="This player is assigned 'x' - type your name here...">
+        <input type="text" id="input-field" class="player-2-name" placeholder="This player is assigned 'o' - type your name here...">
+        <h2 onclick="setName()">PROCEED</h2>
+        <h2 class="play-button" onclick="location.href='game.html';">PLAY!</h2>
     </div>
-
-    <footer>   
-        <input type="button" value="Play!" class="play-button" onclick="location.href='game.html';">
-    </footer>
 </body>
 <script src="main.js"></script>
 </html>

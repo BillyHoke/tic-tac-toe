@@ -1,10 +1,12 @@
 const boxElement = document.querySelector('.boxes');
+let playButton = document.querySelector('.play-button');
 let player1Name = localStorage.getItem('p1');
 let player2Name = localStorage.getItem('p2');
 let xPlayer = 'x';
 let oPlayer = 'o';
 let currentPlayer = xPlayer;
 let winStatus = [];
+// adding audio
 
 boxElement.addEventListener('click', function (event) {
     if (event.target.classList != 'inUse') {
@@ -100,13 +102,14 @@ function displayWinner() {
     let winnerText = document.createElement('p');
     winner.classList.add('winner-text');
     if (currentPlayer == xPlayer) {
-        winnerText.innerHTML = `${player1Name} wins!`;
+        winnerText.innerHTML = `${player2Name} has been <span class"red">eliminated</span>`;
         winner.append(winnerText);
     } else if (currentPlayer == oPlayer) {
-        winnerText.innerText = `${player2Name} wins!`;
+        winnerText.innerHTML = `${player1Name} has been <span class="red">eliminated</span>`;
         winner.append(winnerText);
     }
     boxElement.style.pointerEvents = 'none';
+    playButton.style.visibility = 'visible';
 }
 
 function displayDraw() {
@@ -125,7 +128,6 @@ function setName() {
     if (player1Name == '' || player2Name == '') {
         alert('Type your name to continue!');
     } else {
-        let playButton = document.querySelector('.play-button');
         playButton.style.visibility = 'visible';
     }
 }
