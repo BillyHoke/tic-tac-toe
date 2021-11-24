@@ -8,25 +8,25 @@ let oPlayer = 'o';
 let currentPlayer = xPlayer;
 let winStatus = [];
 // adding audio
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioContext = new AudioContext();
+const audioElement = document.querySelector('audio');
+let audioButton = document.querySelector('.mute-button');
+let audioState = 'paused';
 
 boxElement.addEventListener('click', function (event) {
     if (event.target.classList != 'inUse') {
-        playerAction();
+        let id = event.target.id;
+        event.target.innerHTML = currentPlayer;
+        winStatus.push(id);
+        winStatus[id] = currentPlayer;
+        event.target.classList.toggle('inUse');
         checkWin();
         switchPlayer();
     } else {
         alert(`Spot already taken! You'll have to choose another square!`);
     }
 });
-
-// player action, record event.target and push to winStatus array
-function playerAction() {
-    let id = event.target.id;
-    event.target.innerHTML = currentPlayer;
-    winStatus.push(id);
-    winStatus[id] = currentPlayer;
-    event.target.classList.toggle('inUse');
-}
 
 // switch player. If the current player is 'x', change it to 'o'.
 function switchPlayer() {
@@ -129,6 +129,26 @@ function setName() {
         proceedButton.style.visibility = 'hidden';
         playButton.style.visibility = 'visible';
     }
+}
+
+function handleAudio() {
+    if (audioState === 'paused') {
+        playAudio();
+    } else if (audioState === 'playing') {
+        pauseAudio();
+    }
+}
+
+function playAudio() {
+    audioButton.src = 'images/play.png';
+    audioElement.play();
+    audioState = 'playing';
+}
+
+function pauseAudio() {
+    audioButton.src = 'images/mute.png';
+    audioElement.pause();
+    audioState = 'paused';
 }
 
 //reload the window on button press
