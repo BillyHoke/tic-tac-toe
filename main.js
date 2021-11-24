@@ -1,5 +1,6 @@
 const boxElement = document.querySelector('.boxes');
 let playButton = document.querySelector('.play-button');
+let proceedButton = document.querySelector('.proceed-button');
 let player1Name = localStorage.getItem('p1');
 let player2Name = localStorage.getItem('p2');
 let xPlayer = 'x';
@@ -10,17 +11,22 @@ let winStatus = [];
 
 boxElement.addEventListener('click', function (event) {
     if (event.target.classList != 'inUse') {
-        let id = event.target.id;
-        event.target.innerHTML = currentPlayer;
-        winStatus.push(id);
-        winStatus[id] = currentPlayer;
-        event.target.classList.toggle('inUse');
+        playerAction();
         checkWin();
         switchPlayer();
     } else {
         alert(`Spot already taken! You'll have to choose another square!`);
     }
 });
+
+// player action, record event.target and push to winStatus array
+function playerAction() {
+    let id = event.target.id;
+    event.target.innerHTML = currentPlayer;
+    winStatus.push(id);
+    winStatus[id] = currentPlayer;
+    event.target.classList.toggle('inUse');
+}
 
 // switch player. If the current player is 'x', change it to 'o'.
 function switchPlayer() {
@@ -39,52 +45,43 @@ function checkWin() {
         winStatus.b3 == currentPlayer
     ) {
         displayWinner();
-    }
-
-    if (
+    } else if (
         winStatus.b4 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b6 == currentPlayer
     ) {
         displayWinner();
-    }
-
-    if (
+    } else if (
         winStatus.b7 == currentPlayer &&
         winStatus.b8 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
-    }
-    if (
+    } else if (
         winStatus.b1 == currentPlayer &&
         winStatus.b4 == currentPlayer &&
         winStatus.b7 == currentPlayer
     ) {
         displayWinner();
-    }
-    if (
+    } else if (
         winStatus.b2 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b8 == currentPlayer
     ) {
         displayWinner();
-    }
-    if (
+    } else if (
         winStatus.b3 == currentPlayer &&
         winStatus.b6 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
-    }
-    if (
+    } else if (
         winStatus.b1 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
-    }
-    if (
+    } else if (
         winStatus.b3 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b7 == currentPlayer
@@ -93,7 +90,7 @@ function checkWin() {
     }
 
     // check if winStatus[] length is at maximum amount of possible cells played. If so, nobody wins.
-    if (winStatus.length == 9) {
+    else if (winStatus.length == 9) {
         displayDraw();
     }
 }
@@ -115,9 +112,10 @@ function displayWinner() {
 function displayDraw() {
     let winnerText = document.createElement('p');
     winner.classList.add('winner-text');
-    winnerText.innerText = `It's a draw! Fancy a rematch?`;
+    winnerText.innerText = `It's a draw! Play again?`;
     winner.append(winnerText);
     boxElement.style.pointerEvents = 'none';
+    playButton.style.visibility = 'visible';
 }
 
 function setName() {
@@ -128,6 +126,7 @@ function setName() {
     if (player1Name == '' || player2Name == '') {
         alert('Type your name to continue!');
     } else {
+        proceedButton.style.visibility = 'hidden';
         playButton.style.visibility = 'visible';
     }
 }
