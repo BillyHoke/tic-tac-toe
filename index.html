@@ -80,17 +80,10 @@
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
 }
 
-audio {
-    visibility: hidden;
-}
-
 </style>
-<audio id="myAudio" controls autoplay>
-    <source src="audio/menu-music.mp3" type="audio/mpeg">
-</audio>
 </head>
 <body>
-    <audio src="audio/menu-music.mp3" class="menu-music"></audio>
+        <audio src="/audio/menu-music.mp3" class="menu-music"></audio>
     <header>
         <img src="images/logo.png" class="logo">
         <p>For your next game you'll be playing...</p>
@@ -103,6 +96,9 @@ audio {
         <h2 class="proceed-button" onclick="setName()">PROCEED</h2>
         <h2 class="play-button" onclick="location.href='game.html';">PLAY!</h2>
     </div>
+    <footer>
+        <img class="mute-button" src="images/mute.png" onclick="handleAudio()">
+    </footer>
 </body>
 <script src="main.js"></script>
 </html>
