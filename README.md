@@ -27,7 +27,7 @@ Play the live game at https://billyhoke.github.io/tic-tac-toe/
 * Javascript
   * DOM Manipulation
   * LocalStorage
-* GIT for version control
+* Git version control
 * Web Audio API
 
 ## Playing the game
