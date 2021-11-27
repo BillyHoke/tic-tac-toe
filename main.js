@@ -11,8 +11,9 @@ let winStatus = [];
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 const audioElement = document.querySelector('audio');
-const audioContext2 = new AudioContext();
 const elimSound = document.querySelector('.elim');
+const xPlay = document.querySelector('.x-play');
+const oPlay = document.querySelector('.o-play');
 let audioButton = document.querySelector('.mute-button');
 let audioState = 'paused';
 
@@ -33,9 +34,11 @@ boxElement.addEventListener('click', function (event) {
 // switch player. If the current player is 'x', change it to 'o'.
 function switchPlayer() {
     if (currentPlayer == xPlayer) {
+        xPlay.play();
         currentPlayer = oPlayer;
     } else {
         currentPlayer = xPlayer;
+        oPlay.play();
     }
 }
 
@@ -109,7 +112,9 @@ function displayWinner() {
     }
     boxElement.style.pointerEvents = 'none';
     playButton.style.visibility = 'visible';
-    elimSound.play();
+    setTimeout(function () {
+        elimSound.play();
+    }, 150);
 }
 
 function displayDraw() {
