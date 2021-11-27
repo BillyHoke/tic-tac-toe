@@ -196,3 +196,4 @@ function pauseAudio() {
 function restart() {
     window.location.reload();
 }
+
