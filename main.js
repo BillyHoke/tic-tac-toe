@@ -7,6 +7,15 @@ let xPlayer = 'x';
 let oPlayer = 'o';
 let currentPlayer = xPlayer;
 let winStatus = [];
+let b1 = document.getElementById('b1');
+let b2 = document.getElementById('b2');
+let b3 = document.getElementById('b3');
+let b4 = document.getElementById('b4');
+let b5 = document.getElementById('b5');
+let b6 = document.getElementById('b6');
+let b7 = document.getElementById('b7');
+let b8 = document.getElementById('b8');
+let b9 = document.getElementById('b9');
 // adding audio
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
@@ -50,48 +59,72 @@ function checkWin() {
         winStatus.b3 == currentPlayer
     ) {
         displayWinner();
+        b1.style.color = 'red';
+        b2.style.color = 'red';
+        b3.style.color = 'red';
     } else if (
         winStatus.b4 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b6 == currentPlayer
     ) {
         displayWinner();
+        b4.style.color = 'red';
+        b5.style.color = 'red';
+        b6.style.color = 'red';
     } else if (
         winStatus.b7 == currentPlayer &&
         winStatus.b8 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
+        b7.style.color = 'red';
+        b8.style.color = 'red';
+        b9.style.color = 'red';
     } else if (
         winStatus.b1 == currentPlayer &&
         winStatus.b4 == currentPlayer &&
         winStatus.b7 == currentPlayer
     ) {
         displayWinner();
+        b1.style.color = 'red';
+        b4.style.color = 'red';
+        b7.style.color = 'red';
     } else if (
         winStatus.b2 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b8 == currentPlayer
     ) {
         displayWinner();
+        b2.style.color = 'red';
+        b5.style.color = 'red';
+        b8.style.color = 'red';
     } else if (
         winStatus.b3 == currentPlayer &&
         winStatus.b6 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
+        b3.style.color = 'red';
+        b6.style.color = 'red';
+        b9.style.color = 'red';
     } else if (
         winStatus.b1 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b9 == currentPlayer
     ) {
         displayWinner();
+        b1.style.color = 'red';
+        b5.style.color = 'red';
+        b9.style.color = 'red';
     } else if (
         winStatus.b3 == currentPlayer &&
         winStatus.b5 == currentPlayer &&
         winStatus.b7 == currentPlayer
     ) {
         displayWinner();
+        b3.style.color = 'red';
+        b5.style.color = 'red';
+        b7.style.color = 'red';
     }
 
     // check if winStatus[] length is at maximum amount of possible cells played. If so, nobody wins.
