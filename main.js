@@ -11,6 +11,8 @@ let winStatus = [];
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 const audioElement = document.querySelector('audio');
+const audioContext2 = new AudioContext();
+const elimSound = document.querySelector('.elim');
 let audioButton = document.querySelector('.mute-button');
 let audioState = 'paused';
 
@@ -107,6 +109,7 @@ function displayWinner() {
     }
     boxElement.style.pointerEvents = 'none';
     playButton.style.visibility = 'visible';
+    elimSound.play();
 }
 
 function displayDraw() {
