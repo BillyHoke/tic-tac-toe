@@ -1,5 +1,5 @@
 # Project 1 - Tic Tac Toe
-Play the live game at https://billyhoke.github.io/tic-tac-toe/
+Play the live game at https://stefan-fenech.github.io/tic-tac-toe/
 
 ## Basic Requirements
 - [x] Render a game in the browser
